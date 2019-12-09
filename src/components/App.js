@@ -37,12 +37,12 @@ const reducer = (state, action) => {
   }
 }
 
-function App() {
+const App = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
     fetch(MOVIE_API_URL)
-      .then(response => response.json)
+      .then(response => response.json())
       .then(jsonResponse => {
         dispatch({
           type: "SEARCH_MOVIES_SUCCESS",
